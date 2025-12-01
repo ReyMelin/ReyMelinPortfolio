@@ -993,7 +993,7 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-form" action="#" method="POST">
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -1079,8 +1079,13 @@
                 if (entry.isIntersecting) {
                     const skillBars = entry.target.querySelectorAll('.skill-progress');
                     skillBars.forEach(bar => {
-                        bar.style.width = bar.style.width;
+                        const targetWidth = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = targetWidth;
+                        }, 100);
                     });
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
