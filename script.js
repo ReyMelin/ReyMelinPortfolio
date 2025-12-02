@@ -52,6 +52,40 @@ document.querySelectorAll('.skill-category').forEach(category => {
     observer.observe(category);
 });
 
+// Enhanced skill bar animation with hover effect
+document.querySelectorAll('.skill-item').forEach((item) => {
+    const bar = item.querySelector('.skill-progress');
+
+    item.addEventListener('mouseenter', () => {
+        const targetWidth = bar.style.width;
+        bar.style.transform = 'scaleY(1.2)';
+    });
+
+    item.addEventListener('mouseleave', () => {
+        bar.style.transform = 'scaleY(1)';
+    });
+});
+
+// Animate timeline items on scroll
+const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+            timelineObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+document.querySelectorAll('.timeline-item').forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'translateX(-20px)';
+    item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    timelineObserver.observe(item);
+});
+
 // Form submission handling
 const contactForm = document.querySelector('.contact-form');
 contactForm.addEventListener('submit', (e) => {
@@ -59,4 +93,27 @@ contactForm.addEventListener('submit', (e) => {
     // Add your form submission logic here
     alert('Thank you for your message! I will get back to you soon.');
     contactForm.reset();
+});
+
+// Tech Stack Tab Switching
+document.querySelectorAll('.tech-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const category = tab.dataset.category;
+        
+        // Remove active class from all tabs
+        document.querySelectorAll('.tech-tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        tab.classList.add('active');
+        
+        // Hide all content
+        document.querySelectorAll('.tech-category-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // Show selected content
+        const activeContent = document.querySelector(`[data-content="${category}"]`);
+        if (activeContent) {
+            activeContent.classList.add('active');
+        }
+    });
 });
