@@ -4,6 +4,64 @@ const navLinks = document.getElementById('navLinks');
 
 mobileMenuBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
+});
+
+// Smooth scroll function
+function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+    navLinks.classList.remove('active');
+    mobileMenuBtn.classList.remove('active');
+}
+
+// Update active section on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinkElements = document.querySelectorAll('.nav-links a');
+
+function updateActiveSection() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinkElements.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveSection);
+window.addEventListener('load', updateActiveSection);
+
+// Enhanced smooth scroll for all navigation links
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sectionId = link.getAttribute('data-section');
+        scrollToSection(sectionId);
+    });
+});
+
+// Logo click handler
+document.querySelector('.logo').addEventListener('click', () => {
+    scrollToSection('home');
 });
 
 // Close mobile menu when clicking on a link

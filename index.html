@@ -8,18 +8,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Rey Melin</a>
+            <button class="logo" onclick="scrollToSection('home')">
+                <div class="logo-icon">
+                    <span>R</span>
+                </div>
+                <span class="logo-text">Rey Melin</span>
+            </button>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#about" data-section="about">About</a></li>
+                <li><a href="#skills" data-section="skills">Skills</a></li>
+                <li><a href="#tech-stack" data-section="tech-stack">Tech Stack</a></li>
+                <li><a href="#projects" data-section="projects">Projects</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
                 <span></span>
@@ -136,16 +146,14 @@
                             <h4>Mastered React & Modern Frameworks</h4>
                             <p>Deepened expertise in React, Next.js, and modern development tools.</p>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">20+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Happy Clients</div>
-                        </div>
                     </div>
                 </div>
+                    <div class="stat">
+                        <div class="stat-number">20+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        <div class="stat-number">15+</div>
+                             <div class="stat-label">Happy Clients</div>
+                    </div>
             </div>
         </div>
     </section>

@@ -25,7 +25,8 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    font-family: "Comfortaa", "Quicksand", "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -44,41 +45,91 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(196, 197, 235, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 4rem;
 }
 
 .logo {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    background: var(--bg-secondary);
+}
+
+.logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(to bottom right, #2563eb, #06b6d4);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.05);
+}
+
+.logo-icon span {
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.logo-text {
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--primary-color);
-    text-decoration: none;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 0.25rem;
     list-style: none;
 }
 
+.nav-links li {
+    margin: 0;
+}
+
 .nav-links a {
+    display: block;
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-weight: 500;
+    border-radius: 0.5rem;
     transition: var(--transition);
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.nav-links a.active {
+    background: #dbeafe;
+    color: #1e40af;
 }
 
 .mobile-menu-btn {
@@ -1045,21 +1096,30 @@ section {
 }
 
 @media (max-width: 768px) {
+    .logo-text {
+        display: none;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--color-popover, white);
+        background: white;
         flex-direction: column;
         padding: 1rem;
-        gap: 1rem;
+        gap: 0.5rem;
         border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-lg);
     }
 
     .nav-links.active {
         display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.75rem 1rem;
     }
 
     .mobile-menu-btn {
