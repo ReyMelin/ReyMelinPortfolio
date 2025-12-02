@@ -6,14 +6,14 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-hover: #1d4ed8;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
+    --primary-color: #133989;
+    --primary-hover: #9043fc;
+    --text-primary: #253346;
+    --text-secondary: #2c2c2d;
+    --bg-primary: #9fa4ff;
+    --bg-secondary: #d0cdff;
     --bg-dark: #111827;
-    --border-color: #e5e7eb;
+    --border-color: #aebdd9;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -44,7 +44,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(196, 197, 235, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -72,7 +72,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     font-weight: 500;
     transition: var(--transition);
 }
@@ -127,7 +127,7 @@ body {
 
 .hero-text p {
     font-size: 1.25rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin-bottom: 2rem;
 }
 
