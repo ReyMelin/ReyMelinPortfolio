@@ -22,8 +22,8 @@
 
 /* Dark mode variables */
 [data-theme="dark"] {
-    --text-primary: #e5e7eb;
-    --text-secondary: #9ca3af;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
     --bg-dark: #020617;
@@ -112,7 +112,10 @@ body {
 .logo-text {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--primary-color);
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-links {
@@ -186,7 +189,10 @@ body {
 }
 
 .hero-text h1 span {
-    color: var(--primary-color);
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-text p {
@@ -232,8 +238,8 @@ body {
 }
 
 .btn-outline:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
+    border-color: #60a5fa;
+    color: #60a5fa;
 }
 
 .hero-image {
@@ -739,7 +745,7 @@ section {
 }
 
 .project-links a {
-    color: var(--primary-color);
+    color: #60a5fa;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.875rem;
@@ -785,7 +791,7 @@ section {
 }
 
 .contact-method:hover {
-    color: var(--primary-color);
+    color: #60a5fa;
 }
 
 .contact-method-icon {
@@ -1251,8 +1257,23 @@ section {
     border-bottom-color: var(--border-color);
 }
 
+[data-theme="dark"] .logo-text {
+    background: linear-gradient(to right, #60a5fa, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 [data-theme="dark"] .hero {
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+[data-theme="dark"] .nav-links a {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .nav-links a:hover {
+    color: var(--text-primary);
 }
 
 [data-theme="dark"] .nav-links a.active {
@@ -1269,6 +1290,11 @@ section {
     color: var(--text-primary);
 }
 
+[data-theme="dark"] .btn-outline:hover {
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
 [data-theme="dark"] .skill-category,
 [data-theme="dark"] .project-card,
 [data-theme="dark"] .tech-item,
@@ -1281,11 +1307,66 @@ section {
     border-color: var(--border-color);
 }
 
+[data-theme="dark"] .highlight-card {
+    background: linear-gradient(to bottom right, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
+}
+
+[data-theme="dark"] .section-header h2,
+[data-theme="dark"] .timeline-content h4,
+[data-theme="dark"] .tech-item h4,
+[data-theme="dark"] .highlight-card h3,
+[data-theme="dark"] .project-content h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-header p,
+[data-theme="dark"] .timeline-content p,
+[data-theme="dark"] .tech-item p,
+[data-theme="dark"] .highlight-card p,
+[data-theme="dark"] .project-content p,
+[data-theme="dark"] .about-paragraph {
+    color: var(--text-secondary);
+}
+
 [data-theme="dark"] .form-group input,
 [data-theme="dark"] .form-group textarea {
     background: var(--bg-primary);
     color: var(--text-primary);
     border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+    color: #64748b;
+}
+
+[data-theme="dark"] .form-group label {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-info h3,
+[data-theme="dark"] .contact-info p {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-method {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-method:hover {
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .skill-name {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .skill-percent {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .project-links a {
+    color: #60a5fa;
 }
 
 /* Dark mode for tech stack section */
@@ -1322,40 +1403,45 @@ section {
 /* Dark mode for badges */
 [data-theme="dark"] .badge-blue {
     background-color: rgba(37, 99, 235, 0.2);
-    color: #60a5fa;
+    color: #93c5fd;
 }
 
 [data-theme="dark"] .badge-rose {
     background-color: rgba(244, 63, 94, 0.2);
-    color: #fb7185;
+    color: #fda4af;
 }
 
 [data-theme="dark"] .badge-cyan {
     background-color: rgba(6, 182, 212, 0.2);
-    color: #22d3ee;
+    color: #67e8f9;
 }
 
 [data-theme="dark"] .tech-badge-green {
     background-color: rgba(16, 185, 129, 0.2);
-    color: #34d399;
+    color: #6ee7b7;
 }
 
 [data-theme="dark"] .tech-badge-blue {
     background-color: rgba(37, 99, 235, 0.2);
-    color: #60a5fa;
+    color: #93c5fd;
 }
 
 [data-theme="dark"] .tech-badge-cyan {
     background-color: rgba(6, 182, 212, 0.2);
-    color: #22d3ee;
+    color: #67e8f9;
 }
 
 [data-theme="dark"] .tech-badge-rose {
     background-color: rgba(244, 63, 94, 0.2);
-    color: #fb7185;
+    color: #fda4af;
 }
 
 [data-theme="dark"] .tech-pill {
     background: rgba(37, 99, 235, 0.2);
-    color: #60a5fa;
+    color: #93c5fd;
+}
+
+[data-theme="dark"] .tag {
+    background: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
 }
