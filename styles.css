@@ -20,6 +20,19 @@
     --transition: all 0.3s ease;
 }
 
+/* Dark mode variables */
+[data-theme="dark"] {
+    --text-primary: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-dark: #020617;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -1138,6 +1151,11 @@ section {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
+    }
+
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 0.5rem;
     }
 }
 
