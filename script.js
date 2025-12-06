@@ -53,9 +53,13 @@ window.addEventListener('load', updateActiveSection);
 // Enhanced smooth scroll for all navigation links
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const sectionId = link.getAttribute('data-section');
-        scrollToSection(sectionId);
+        const href = link.getAttribute('href');
+        // Only prevent default for hash links
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const sectionId = link.getAttribute('data-section');
+            scrollToSection(sectionId);
+        }
     });
 });
 
@@ -74,13 +78,16 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        // Only handle links within .nav-links or that are hash-only links
+        if (this.closest('.nav-links') || this.getAttribute('href') === '#' || this.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     });
 });

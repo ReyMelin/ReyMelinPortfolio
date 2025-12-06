@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chat Application Demo - Rey Melin Portfolio">
+    <title>Chat Application Demo | Rey Melin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .demo-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .demo-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-hero .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content {
+            padding: 60px 0;
+        }
+
+        .demo-section {
+            margin-bottom: 60px;
+        }
+
+        .demo-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-card h3 {
+            color: #f5576c;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f5576c;
+            font-weight: bold;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .screenshot-placeholder {
+            background: var(--card-bg);
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        .cta-section {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .security-badge {
+            display: inline-block;
+            background: #4ade80;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <button class="logo" onclick="window.location.href='index.html'">
+                <div class="logo-icon">
+                    <span>R</span>
+                </div>
+                <span class="logo-text">Rey Melin</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Back to Portfolio</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-icon sun-icon">☀️</span>
+                <span class="theme-icon moon-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Demo Hero -->
+    <section class="demo-hero">
+        <div class="container">
+            <div class="emoji">💬</div>
+            <h1>Chat Application</h1>
+            <p>Secure, real-time messaging platform</p>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <section class="demo-content">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+            <!-- Project Overview -->
+            <div class="demo-section">
+                <h2>Project Overview</h2>
+                <p>A modern, feature-rich chat application that enables real-time communication with a focus on security and user experience. Built with WebSocket technology for instant message delivery and end-to-end encryption to ensure privacy.</p>
+                
+                <div style="text-align: center; margin: 1rem 0;">
+                    <span class="security-badge">🔒 End-to-End Encrypted</span>
+                    <span class="security-badge">⚡ Real-time</span>
+                    <span class="security-badge">📱 Cross-platform</span>
+                </div>
+
+                <div class="screenshot-placeholder">
+                    💬 Chat Interface Screenshot
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="demo-section">
+                <h2>Key Features</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>⚡ Real-time Messaging</h3>
+                        <ul class="feature-list">
+                            <li>Instant message delivery</li>
+                            <li>WebSocket connections</li>
+                            <li>Typing indicators</li>
+                            <li>Read receipts</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>👥 Group Chats</h3>
+                        <ul class="feature-list">
+                            <li>Create public/private groups</li>
+                            <li>Admin controls</li>
+                            <li>Member management</li>
+                            <li>Group settings</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📎 File Sharing</h3>
+                        <ul class="feature-list">
+                            <li>Images and videos</li>
+                            <li>Documents and PDFs</li>
+                            <li>Drag and drop upload</li>
+                            <li>File preview</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🔐 Security</h3>
+                        <ul class="feature-list">
+                            <li>End-to-end encryption</li>
+                            <li>Secure authentication</li>
+                            <li>Private conversations</li>
+                            <li>Data protection</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🔔 Notifications</h3>
+                        <ul class="feature-list">
+                            <li>Push notifications</li>
+                            <li>Desktop alerts</li>
+                            <li>Customizable sounds</li>
+                            <li>Notification preferences</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>😊 Rich Content</h3>
+                        <ul class="feature-list">
+                            <li>Emoji reactions</li>
+                            <li>GIF support</li>
+                            <li>Message formatting</li>
+                            <li>Link previews</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Features -->
+            <div class="demo-section">
+                <h2>Advanced Features</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>🔍 Search</h3>
+                        <p>Search through message history with powerful filters</p>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📌 Pinned Messages</h3>
+                        <p>Pin important messages to the top of conversations</p>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🎨 Themes</h3>
+                        <p>Customize the look with light and dark themes</p>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📱 Mobile Responsive</h3>
+                        <p>Works seamlessly on all devices and screen sizes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="demo-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-stack-grid">
+                    <div class="tech-badge">React</div>
+                    <div class="tech-badge">Socket.io</div>
+                    <div class="tech-badge">Express</div>
+                    <div class="tech-badge">MongoDB</div>
+                    <div class="tech-badge">Node.js</div>
+                    <div class="tech-badge">JWT</div>
+                    <div class="tech-badge">WebRTC</div>
+                    <div class="tech-badge">Redis</div>
+                </div>
+            </div>
+
+            <!-- Technical Highlights -->
+            <div class="demo-section">
+                <h2>Technical Highlights</h2>
+                <div class="demo-card">
+                    <h3>Architecture & Implementation</h3>
+                    <ul class="feature-list">
+                        <li>Socket.io for bidirectional real-time communication</li>
+                        <li>End-to-end encryption using Web Crypto API</li>
+                        <li>Optimistic UI updates for instant feedback</li>
+                        <li>Message queuing for offline support</li>
+                        <li>Redis for session management and caching</li>
+                        <li>File uploads with chunking for large files</li>
+                        <li>Message pagination with infinite scroll</li>
+                        <li>Presence detection (online/offline status)</li>
+                        <li>Reconnection logic with exponential backoff</li>
+                        <li>MongoDB for efficient message storage and retrieval</li>
+                        <li>JWT authentication with refresh tokens</li>
+                        <li>Rate limiting to prevent spam and abuse</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Security Features -->
+            <div class="demo-section">
+                <h2>Security & Privacy</h2>
+                <div class="demo-card">
+                    <h3>🛡️ Security Measures</h3>
+                    <ul class="feature-list">
+                        <li>End-to-end encryption for all messages</li>
+                        <li>Secure WebSocket connections (WSS)</li>
+                        <li>XSS and CSRF protection</li>
+                        <li>Input sanitization and validation</li>
+                        <li>Secure file upload handling</li>
+                        <li>Password hashing with bcrypt</li>
+                        <li>Regular security audits</li>
+                        <li>GDPR compliance features</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Interested in this project?</h2>
+                <p>View the source code or get in touch to discuss similar projects</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">View Source Code</a>
+                    <a href="index.html#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rey Melin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-Commerce Platform Demo - Rey Melin Portfolio">
+    <title>E-Commerce Platform Demo | Rey Melin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .demo-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .demo-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-hero .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content {
+            padding: 60px 0;
+        }
+
+        .demo-section {
+            margin-bottom: 60px;
+        }
+
+        .demo-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .screenshot-placeholder {
+            background: var(--card-bg);
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        .cta-section {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <button class="logo" onclick="window.location.href='index.html'">
+                <div class="logo-icon">
+                    <span>R</span>
+                </div>
+                <span class="logo-text">Rey Melin</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Back to Portfolio</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-icon sun-icon">☀️</span>
+                <span class="theme-icon moon-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Demo Hero -->
+    <section class="demo-hero">
+        <div class="container">
+            <div class="emoji">🛒</div>
+            <h1>E-Commerce Platform</h1>
+            <p>A full-stack e-commerce solution with modern features</p>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <section class="demo-content">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+            <!-- Project Overview -->
+            <div class="demo-section">
+                <h2>Project Overview</h2>
+                <p>This e-commerce platform is a comprehensive solution designed to provide businesses with a complete online store. Built with modern technologies, it offers a seamless shopping experience for customers while providing powerful tools for store administrators.</p>
+                
+                <div class="screenshot-placeholder">
+                    🖼️ Project Screenshot
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="demo-section">
+                <h2>Key Features</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>🔐 User Authentication</h3>
+                        <ul class="feature-list">
+                            <li>Secure login and registration</li>
+                            <li>OAuth integration</li>
+                            <li>Password reset functionality</li>
+                            <li>Session management</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📦 Product Management</h3>
+                        <ul class="feature-list">
+                            <li>Advanced product catalog</li>
+                            <li>Category organization</li>
+                            <li>Inventory tracking</li>
+                            <li>Product variants</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>💳 Payment Processing</h3>
+                        <ul class="feature-list">
+                            <li>Stripe integration</li>
+                            <li>Multiple payment methods</li>
+                            <li>Secure checkout</li>
+                            <li>Order confirmation</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🛍️ Shopping Cart</h3>
+                        <ul class="feature-list">
+                            <li>Real-time cart updates</li>
+                            <li>Save for later</li>
+                            <li>Coupon codes</li>
+                            <li>Shipping calculator</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📊 Admin Dashboard</h3>
+                        <ul class="feature-list">
+                            <li>Sales analytics</li>
+                            <li>Order management</li>
+                            <li>Customer insights</li>
+                            <li>Inventory reports</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🔍 Search & Filter</h3>
+                        <ul class="feature-list">
+                            <li>Advanced search</li>
+                            <li>Filter by category</li>
+                            <li>Price range filtering</li>
+                            <li>Sort options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="demo-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-stack-grid">
+                    <div class="tech-badge">React</div>
+                    <div class="tech-badge">Node.js</div>
+                    <div class="tech-badge">Express</div>
+                    <div class="tech-badge">MongoDB</div>
+                    <div class="tech-badge">Stripe API</div>
+                    <div class="tech-badge">JWT</div>
+                    <div class="tech-badge">Redux</div>
+                    <div class="tech-badge">Tailwind CSS</div>
+                </div>
+            </div>
+
+            <!-- Technical Highlights -->
+            <div class="demo-section">
+                <h2>Technical Highlights</h2>
+                <div class="demo-card">
+                    <h3>Architecture & Design Patterns</h3>
+                    <ul class="feature-list">
+                        <li>RESTful API design with proper HTTP methods and status codes</li>
+                        <li>MVC architecture for clean code separation</li>
+                        <li>Responsive design that works seamlessly on all devices</li>
+                        <li>State management using Redux for predictable data flow</li>
+                        <li>JWT-based authentication with refresh token mechanism</li>
+                        <li>Optimized database queries with proper indexing</li>
+                        <li>Error handling and validation on both client and server</li>
+                        <li>Image optimization and lazy loading for fast performance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Interested in this project?</h2>
+                <p>View the source code or get in touch to discuss similar projects</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">View Source Code</a>
+                    <a href="index.html#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rey Melin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

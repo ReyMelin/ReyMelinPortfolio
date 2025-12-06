@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analytics Dashboard Demo - Rey Melin Portfolio">
+    <title>Analytics Dashboard Demo | Rey Melin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .demo-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .demo-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-hero .emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-content {
+            padding: 60px 0;
+        }
+
+        .demo-section {
+            margin-bottom: 60px;
+        }
+
+        .demo-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .screenshot-placeholder {
+            background: var(--card-bg);
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 4rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 3rem;
+            margin: 2rem 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: gap 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 1rem;
+        }
+
+        .cta-section {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .chart-example {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <button class="logo" onclick="window.location.href='index.html'">
+                <div class="logo-icon">
+                    <span>R</span>
+                </div>
+                <span class="logo-text">Rey Melin</span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Back to Portfolio</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                <span class="theme-icon sun-icon">☀️</span>
+                <span class="theme-icon moon-icon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Demo Hero -->
+    <section class="demo-hero">
+        <div class="container">
+            <div class="emoji">📊</div>
+            <h1>Analytics Dashboard</h1>
+            <p>Real-time data visualization and business intelligence</p>
+        </div>
+    </section>
+
+    <!-- Demo Content -->
+    <section class="demo-content">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+            <!-- Project Overview -->
+            <div class="demo-section">
+                <h2>Project Overview</h2>
+                <p>A powerful analytics dashboard that transforms raw data into actionable insights. Built with modern data visualization libraries, it provides real-time metrics, interactive charts, and customizable widgets to help businesses make data-driven decisions.</p>
+                
+                <div class="screenshot-placeholder">
+                    📈 Dashboard Screenshot
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="demo-section">
+                <h2>Key Features</h2>
+                <div class="demo-grid">
+                    <div class="demo-card">
+                        <h3>📈 Real-time Data</h3>
+                        <ul class="feature-list">
+                            <li>Live data updates via WebSocket</li>
+                            <li>Auto-refresh intervals</li>
+                            <li>Streaming data visualization</li>
+                            <li>Real-time alerts</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🎨 Interactive Charts</h3>
+                        <ul class="feature-list">
+                            <li>Line, bar, and pie charts</li>
+                            <li>Heat maps and scatter plots</li>
+                            <li>Zoom and pan capabilities</li>
+                            <li>Responsive visualizations</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>🎯 Custom Widgets</h3>
+                        <ul class="feature-list">
+                            <li>Drag and drop layout</li>
+                            <li>Resizable widgets</li>
+                            <li>Save custom dashboards</li>
+                            <li>Widget templates</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📅 Date Range Filters</h3>
+                        <ul class="feature-list">
+                            <li>Custom date selection</li>
+                            <li>Quick date presets</li>
+                            <li>Compare time periods</li>
+                            <li>Historical data access</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>📊 Data Export</h3>
+                        <ul class="feature-list">
+                            <li>Export to CSV/Excel</li>
+                            <li>PDF report generation</li>
+                            <li>Scheduled reports</li>
+                            <li>Email automation</li>
+                        </ul>
+                    </div>
+                    <div class="demo-card">
+                        <h3>👥 Multi-user Support</h3>
+                        <ul class="feature-list">
+                            <li>Role-based access</li>
+                            <li>Team dashboards</li>
+                            <li>Shared widgets</li>
+                            <li>Collaborative features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Examples -->
+            <div class="demo-section">
+                <h2>Visualization Types</h2>
+                <div class="demo-grid">
+                    <div class="chart-example">
+                        <h4>📈 Line Charts</h4>
+                        <p>Track trends over time</p>
+                    </div>
+                    <div class="chart-example">
+                        <h4>📊 Bar Charts</h4>
+                        <p>Compare categories</p>
+                    </div>
+                    <div class="chart-example">
+                        <h4>🥧 Pie Charts</h4>
+                        <p>Show proportions</p>
+                    </div>
+                    <div class="chart-example">
+                        <h4>🗺️ Heat Maps</h4>
+                        <p>Display data density</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technology Stack -->
+            <div class="demo-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-stack-grid">
+                    <div class="tech-badge">TypeScript</div>
+                    <div class="tech-badge">React</div>
+                    <div class="tech-badge">D3.js</div>
+                    <div class="tech-badge">Chart.js</div>
+                    <div class="tech-badge">PostgreSQL</div>
+                    <div class="tech-badge">Node.js</div>
+                    <div class="tech-badge">WebSocket</div>
+                    <div class="tech-badge">Redis</div>
+                </div>
+            </div>
+
+            <!-- Technical Highlights -->
+            <div class="demo-section">
+                <h2>Technical Highlights</h2>
+                <div class="demo-card">
+                    <h3>Performance & Architecture</h3>
+                    <ul class="feature-list">
+                        <li>TypeScript for type-safe code and better developer experience</li>
+                        <li>D3.js for powerful, customizable data visualizations</li>
+                        <li>Redis caching for lightning-fast data retrieval</li>
+                        <li>WebSocket integration for real-time data streaming</li>
+                        <li>Optimized SQL queries with proper indexing</li>
+                        <li>Lazy loading for large datasets to improve performance</li>
+                        <li>Responsive design that adapts to all screen sizes</li>
+                        <li>Data aggregation and preprocessing on the backend</li>
+                        <li>CSV/PDF export functionality with streaming for large files</li>
+                        <li>Role-based access control for secure data handling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Interested in this project?</h2>
+                <p>View the source code or get in touch to discuss similar projects</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">View Source Code</a>
+                    <a href="index.html#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rey Melin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
