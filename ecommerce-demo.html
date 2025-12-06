@@ -21,11 +21,16 @@
         .demo-hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: white;
         }
 
         .demo-hero .emoji {
             font-size: 4rem;
             margin-bottom: 1rem;
+        }
+
+        .demo-hero p {
+            color: white;
         }
 
         .demo-content {
@@ -105,18 +110,47 @@
             background: var(--card-bg);
             border: 2px dashed var(--border-color);
             border-radius: 12px;
-            padding: 4rem;
+            padding: 2rem;
             text-align: center;
             color: var(--text-secondary);
-            font-size: 3rem;
             margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .screenshot-placeholder a {
+            display: inline-block;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .screenshot-placeholder a:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .screenshot-placeholder .emoji-fallback {
+            font-size: 3rem;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        .screenshot-placeholder p {
+            color: var(--text-secondary);
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--primary-color);
+            color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
             margin-bottom: 2rem;
@@ -173,7 +207,7 @@
         <div class="container">
             <div class="emoji">🛒</div>
             <h1>E-Commerce Platform</h1>
-            <p>A full-stack e-commerce solution with modern features</p>
+            <p>A full-stack e-commerce solution with modern features • Visit my live Etsy store!</p>
         </div>
     </section>
 
@@ -186,9 +220,13 @@
             <div class="demo-section">
                 <h2>Project Overview</h2>
                 <p>This e-commerce platform is a comprehensive solution designed to provide businesses with a complete online store. Built with modern technologies, it offers a seamless shopping experience for customers while providing powerful tools for store administrators.</p>
+                <p><strong>🎨 See e-commerce in action:</strong> Check out my live Etsy shop where I sell handcrafted items and digital products, demonstrating real-world e-commerce principles!</p>
                 
                 <div class="screenshot-placeholder">
-                    🖼️ Project Screenshot
+                    <a href="https://www.etsy.com/shop/ReyMelin" target="_blank" rel="noopener noreferrer" title="Visit my Etsy shop">
+                        <img src="Etsy Shop Screenshot.png" alt="Etsy Shop Screenshot - Click to visit">
+                    </a>
+                    <p style="margin-top: 1rem;">🏪 Click the image to visit my Etsy Store</p>
                 </div>
             </div>
 
@@ -216,7 +254,7 @@
                     </div>
                     <div class="demo-card">
                         <h3>💳 Payment Processing</h3>
-                        <ul class="feature-list">
+                        <ul class="feature-list"></ul>
                             <li>Stripe integration</li>
                             <li>Multiple payment methods</li>
                             <li>Secure checkout</li>
@@ -289,9 +327,9 @@
             <!-- CTA Section -->
             <div class="cta-section">
                 <h2>Interested in this project?</h2>
-                <p>View the source code or get in touch to discuss similar projects</p>
+                <p>Visit my live Etsy store or get in touch to discuss similar projects</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary">View Source Code</a>
+                    <a href="https://www.etsy.com/shop/ReyMelin" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🛍️ Visit My Etsy Shop</a>
                     <a href="index.html#contact" class="btn btn-outline">Contact Me</a>
                 </div>
             </div>
@@ -305,6 +343,24 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
+    </script>
 </body>
 </html>

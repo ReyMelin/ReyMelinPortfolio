@@ -21,11 +21,16 @@
         .demo-hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            color: white;
         }
 
         .demo-hero .emoji {
             font-size: 4rem;
             margin-bottom: 1rem;
+        }
+
+        .demo-hero p {
+            color: white;
         }
 
         .demo-content {
@@ -64,6 +69,10 @@
         .demo-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
+        }
+
+        .demo-card p {
+            color: var(--text-primary);
         }
 
         .feature-list {
@@ -105,11 +114,25 @@
             background: var(--card-bg);
             border: 2px dashed var(--border-color);
             border-radius: 12px;
-            padding: 4rem;
+            padding: 2rem;
             text-align: center;
             color: var(--text-secondary);
-            font-size: 3rem;
             margin: 2rem 0;
+            overflow: hidden;
+        }
+
+        .screenshot-placeholder img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .screenshot-placeholder .emoji-fallback {
+            font-size: 3rem;
+            display: block;
+            margin: 1rem 0;
         }
 
         .back-link {
@@ -154,6 +177,15 @@
             margin: 1rem 0;
             text-align: center;
             border: 1px solid var(--border-color);
+        }
+
+        .chart-example h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-example p {
+            color: var(--text-secondary);
         }
     </style>
 </head>
@@ -339,6 +371,24 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to 'light'
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
+    </script>
 </body>
 </html>

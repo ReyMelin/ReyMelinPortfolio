@@ -153,11 +153,48 @@ document.querySelectorAll('.timeline-item').forEach((item, index) => {
 
 // Form submission handling
 const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
+    
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    
+    // Get form data
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+    
+    // Disable button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        } else {
+            alert(data.error || 'Failed to send message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to send message. Please try again or contact me directly at reymelin2024@gmail.com');
+    } finally {
+        // Re-enable button
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+    }
 });
 
 // Tech Stack Tab Switching
