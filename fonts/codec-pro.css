@@ -1,0 +1,28 @@
+/* Codec Pro Font Faces */
+
+@font-face {
+    font-family: 'Codec Pro';
+    src: url('./codec-pro/CodecPro-Regular.woff2') format('woff2'),
+         url('./codec-pro/CodecPro-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Codec Pro';
+    src: url('./codec-pro/CodecPro-Bold.woff2') format('woff2'),
+         url('./codec-pro/CodecPro-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Codec Pro';
+    src: url('./codec-pro/CodecPro-ExtraBold.woff2') format('woff2'),
+         url('./codec-pro/CodecPro-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}

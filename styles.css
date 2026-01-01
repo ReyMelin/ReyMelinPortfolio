@@ -18,6 +18,11 @@
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --transition: all 0.3s ease;
+    
+    /* Updated font variables */
+    --font-headline: 'Codec Pro', 'Source Code Pro', 'Montserrat', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Comfortaa', 'Quicksand', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Source Code Pro', 'Courier New', monospace;
 }
 
 /* Dark mode variables */
@@ -38,8 +43,7 @@ html {
 }
 
 body {
-    
-    font-family: "Comfortaa", "Quicksand", "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -110,8 +114,10 @@ body {
 }
 
 .logo-text {
+    font-family: var(--font-headline);
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     background: linear-gradient(to right, #2563eb, #9333ea);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -182,10 +188,12 @@ body {
 }
 
 .hero-text h1 {
+    font-family: var(--font-headline);
     font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
     margin-bottom: 1rem;
+    letter-spacing: -0.03em;
 }
 
 .hero-text h1 span {
@@ -271,9 +279,11 @@ section {
 }
 
 .section-header h2 {
+    font-family: var(--font-headline);
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 1rem;
+    letter-spacing: -0.03em;
 }
 
 .section-header p {
@@ -420,9 +430,12 @@ section {
 }
 
 .highlight-card h3 {
+    font-family: var(--font-headline);
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .highlight-card p {
@@ -436,10 +449,13 @@ section {
 }
 
 .journey-title {
+    font-family: var(--font-headline);
     font-size: 2rem;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .timeline-container {
@@ -498,9 +514,12 @@ section {
 }
 
 .timeline-content h4 {
+    font-family: var(--font-headline);
     font-size: 1.125rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .timeline-content p {
@@ -547,7 +566,10 @@ section {
 }
 
 .skill-category h3 {
+    font-family: var(--font-headline);
     font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .skill-list {
@@ -646,10 +668,13 @@ section {
 }
 
 .additional-skills h3 {
+    font-family: var(--font-headline);
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 2rem;
     color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .tech-pills {
@@ -664,15 +689,12 @@ section {
     background: linear-gradient(to right, #dbeafe, #cffafe);
     color: #1e40af;
     border-radius: 9999px;
-    font-size: 0.875rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
     font-weight: 500;
     transition: var(--transition);
     cursor: default;
-}
-
-.tech-pill:hover {
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
+    letter-spacing: -0.01em;
 }
 
 /* Projects Section */
@@ -726,8 +748,11 @@ section {
 }
 
 .project-content h3 {
+    font-family: var(--font-headline);
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .project-content p {
@@ -793,8 +818,11 @@ section {
 }
 
 .contact-info h3 {
+    font-family: var(--font-headline);
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .contact-info p {
@@ -1026,9 +1054,12 @@ section {
 }
 
 .tech-item h4 {
+    font-family: var(--font-headline);
     font-size: 1.125rem;
     margin-bottom: 0.25rem;
     color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .tech-item p {
@@ -1046,9 +1077,12 @@ section {
 }
 
 .tech-note h3 {
+    font-family: var(--font-headline);
     font-size: 1.75rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 .tech-note p {
@@ -1471,4 +1505,45 @@ section {
 [data-theme="dark"] .tag {
     background: rgba(59, 130, 246, 0.2);
     color: #93c5fd;
+}
+
+/* Add styles for code elements */
+code,
+pre,
+.code-text {
+    font-family: var(--font-mono);
+    font-weight: 400;
+}
+
+code {
+    background: var(--bg-secondary);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    color: var(--text-primary);
+}
+
+pre {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+/* Dark mode code styling */
+[data-theme="dark"] code {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] pre {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
 }
